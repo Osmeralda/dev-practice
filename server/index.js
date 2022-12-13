@@ -1,10 +1,12 @@
 const express = require('express');
 
 const app = express();
-const port = 2600;
+const port = 3001;
 const bikeDataRouter = require("./routes/bikeData");
+const cors = require("cors");
 
 app.use(express.json());
+app.use(cors());
 app.use(express.urlencoded({
     extended: true,
 })
