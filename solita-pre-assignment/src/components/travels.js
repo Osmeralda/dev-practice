@@ -37,8 +37,8 @@ export default function Travels() {
             {error && (<div>{`There appears to be and error ${error}`}</div>)}
             <ul>
                 {data &&
-                    data.map(({ Departure, Return }) => (
-                        <li key={Departure}><h3>{Return}</h3></li>
+                    data.map(({ departure_time, return_time, return_station_id, return_station_name, departure_station_name, departure_station_id, covered_distance, duration }) => (
+                        <li key={departure_time}><h3>From: {departure_station_name} {departure_station_id} To: {return_station_name} {return_station_id} Covering: {(covered_distance / 1000).toFixed(1)}km Lasting: {(duration / 60).toFixed(1)} minutes</h3></li>
                     ))}
             </ul>
         </div>
